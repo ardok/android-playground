@@ -2,7 +2,6 @@ package navdrawer.example.ardok.navdrawerex.fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -13,15 +12,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import navdrawer.example.ardok.navdrawerex.R;
 import navdrawer.example.ardok.navdrawerex.adapter.NavDrawerAdapter;
 import navdrawer.example.ardok.navdrawerex.model.NavDrawerLink;
-import navdrawer.example.ardok.navdrawerex.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -110,14 +107,6 @@ public class NavDrawerFragment extends Fragment {
                     saveToPreferences(getActivity(), KEY_USER_LEARNED_DRAWER, "true");
                 }
                 getActivity().invalidateOptionsMenu();
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    // try to set status bar to be translucent
-                    Window window = getActivity().getWindow();
-                    // Enable status bar translucency (requires API 19)
-                    window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                }
             }
 
             @Override

@@ -29,6 +29,7 @@ public class MainActivity extends BaseActivity {
 
         setUpToolbarWithDrawer();
         setUpNavDrawer();
+        getSupportActionBar().setTitle("Main Activity");
     }
 
     @Override

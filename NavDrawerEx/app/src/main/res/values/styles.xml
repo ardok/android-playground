@@ -12,8 +12,8 @@
     </style>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
-        <item name="android:textColorPrimary">@color/primary</item>
-        <item name="android:textColorSecondary">#9FA8DA</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">#E8EAF6</item>
     </style>
 
 </resources>

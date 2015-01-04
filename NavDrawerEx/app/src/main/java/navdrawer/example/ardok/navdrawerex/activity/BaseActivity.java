@@ -1,5 +1,6 @@
 package navdrawer.example.ardok.navdrawerex.activity;
 
+import android.os.Build;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,7 +18,9 @@ public class BaseActivity extends ActionBarActivity {
     private void setUpToolbar() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        mToolbar.setPadding(0, getStatusBarHeight(), 0, 0);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            mToolbar.setPadding(0, getStatusBarHeight(), 0, 0);
+        }
     }
 
     protected void setUpToolbarWithDrawer() {

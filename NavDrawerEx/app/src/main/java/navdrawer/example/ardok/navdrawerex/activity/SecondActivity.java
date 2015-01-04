@@ -14,6 +14,7 @@ public class SecondActivity extends BaseActivity {
         setContentView(R.layout.activity_second);
 
         setUpToolbarWithoutDrawer();
+        getSupportActionBar().setTitle("Second Activity");
     }
 
     @Override
