@@ -131,31 +131,6 @@ public class NavDrawerFragment extends Fragment {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
-//                if(slideOffset<0.6) {
-//                    toolbar.setAlpha(1 - slideOffset);
-//                }
-
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//                    // try to set status bar to be translucent
-//                    Window window = getActivity().getWindow();
-//
-//                    if (slideOffset > 0.0) {
-//                        if (isStatusBarTranslucent) {
-//                            return;
-//                        }
-//                        // Enable status bar translucency (requires API 19)
-//                        window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-//                                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//                        isStatusBarTranslucent = true;
-//                    } else {
-//                        if (!isStatusBarTranslucent) {
-//                            return;
-//                        }
-//                        // Disable status bar translucency (requires API 19)
-//                        window.getAttributes().flags &= (~WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//                        isStatusBarTranslucent = false;
-//                    }
-//                }
             }
         };
         if (!mUserLearnedDrawer && !mFromSavedInstanceState) {
