@@ -1,4 +1,4 @@
-package navdrawer.example.ardok.navdrawerex;
+package navdrawer.example.ardok.navdrawerex.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import java.util.Collections;
 import java.util.List;
+
+import navdrawer.example.ardok.navdrawerex.model.NavDrawerLink;
+import navdrawer.example.ardok.navdrawerex.R;
 
 /**
  * Created by ardokusuma on 1/3/15.

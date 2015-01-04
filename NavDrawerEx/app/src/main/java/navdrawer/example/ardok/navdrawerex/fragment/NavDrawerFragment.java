@@ -1,4 +1,4 @@
-package navdrawer.example.ardok.navdrawerex;
+package navdrawer.example.ardok.navdrawerex.fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -19,6 +19,10 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import navdrawer.example.ardok.navdrawerex.adapter.NavDrawerAdapter;
+import navdrawer.example.ardok.navdrawerex.model.NavDrawerLink;
+import navdrawer.example.ardok.navdrawerex.R;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -33,8 +37,6 @@ public class NavDrawerFragment extends Fragment {
     private boolean mUserLearnedDrawer;
     private boolean mFromSavedInstanceState;
     private View containerView;
-    private boolean hasSetUp = false;
-    private boolean isStatusBarTranslucent = false;
 
     public NavDrawerFragment() {
         // Required empty public constructor
@@ -96,10 +98,6 @@ public class NavDrawerFragment extends Fragment {
     }
 
     public void setUp(int fragmentId, DrawerLayout drawerLayout, final Toolbar toolbar) {
-        if (hasSetUp) {
-            return;
-        }
-        hasSetUp = true;
         containerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
         mDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar,
