@@ -11,8 +11,8 @@ import android.widget.TextView;
 import java.util.Collections;
 import java.util.List;
 
-import navdrawer.example.ardok.navdrawerex.model.NavDrawerLink;
 import navdrawer.example.ardok.navdrawerex.R;
+import navdrawer.example.ardok.navdrawerex.model.NavDrawerLink;
 
 /**
  * Created by ardokusuma on 1/3/15.
@@ -36,8 +36,7 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         NavDrawerLink current = data.get(position);
-        holder.title.setText(current.title);
-        holder.icon.setImageResource(current.iconId);
+        holder.bindViewHolder(current);
     }
 
     @Override
@@ -53,6 +52,11 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerAdapter.View
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.titleTV);
             icon = (ImageView) itemView.findViewById(R.id.iconIV);
+        }
+
+        public void bindViewHolder(NavDrawerLink link) {
+            title.setText(link.title);
+            icon.setImageResource(link.iconId);
         }
     }
 }
