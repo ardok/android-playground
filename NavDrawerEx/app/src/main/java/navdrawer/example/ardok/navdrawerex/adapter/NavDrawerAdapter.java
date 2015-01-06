@@ -28,15 +28,41 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerAdapter.View
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.nav_drawer_row, parent, false);
-        ViewHolder holder = new ViewHolder(view);
+        View view = null;
+        ViewHolder holder = null;
+        switch (viewType) {
+            case ViewType.HEADER_IMG:
+                view = inflater.inflate(R.layout.nav_drawer_top_img, parent, false);
+                holder = new ViewHolder(view);
+                break;
+            default:
+                view = inflater.inflate(R.layout.nav_drawer_row, parent, false);
+                holder = new ViewHolder(view);
+        }
         return holder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        NavDrawerLink current = data.get(position);
-        holder.bindViewHolder(current);
+        switch (position) {
+            case ViewType.HEADER_IMG:
+                return;
+            default:
+                NavDrawerLink current = data.get(position);
+                holder.bindViewHolder(current);
+        }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        // for example
+        // Note that unlike ListView adapters, types need not be contiguous
+        switch (position) {
+            case 0:
+                return ViewType.HEADER_IMG;
+            default:
+                return ViewType.ICON_TEXT;
+        }
     }
 
     @Override
@@ -58,5 +84,10 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerAdapter.View
             title.setText(link.title);
             icon.setImageResource(link.iconId);
         }
+    }
+
+    class ViewType {
+        public static final int HEADER_IMG = 0;
+        public static final int ICON_TEXT = 1;
     }
 }

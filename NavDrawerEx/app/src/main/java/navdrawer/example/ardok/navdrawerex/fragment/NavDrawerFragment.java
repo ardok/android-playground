@@ -40,22 +40,21 @@ public class NavDrawerFragment extends Fragment {
     }
 
     public static List<NavDrawerLink> getData() {
-        //load only static data inside a drawer
+        // load only static data inside a drawer
         List<NavDrawerLink> data = new ArrayList<>();
-        int[] icons = {
-                R.drawable.ic_launcher,
-                R.drawable.ic_launcher,
-                R.drawable.ic_launcher,
-                R.drawable.ic_launcher
-        };
-        String[] titles = {
-                "Test1",
-                "Test2",
-                "Test3",
-                "Test4"
-        };
-        for (int i = 0; i < titles.length && i < icons.length; i++) {
-            NavDrawerLink current = new NavDrawerLink(icons[i], titles[i]);
+        ArrayList<Integer> icons = new ArrayList<>();
+        ArrayList<String> titles = new ArrayList<>();
+
+        // data 0 will be used for the image on top, so it can be anything for now
+
+        for (int i = 0; i < 51; i++) {
+            icons.add(R.drawable.ic_launcher);
+            titles.add("Test " + i);
+        }
+        int iconsSize = icons.size();
+        int titlesSize = titles.size();
+        for (int i = 0; i < iconsSize && i < titlesSize; i++) {
+            NavDrawerLink current = new NavDrawerLink(icons.get(i), titles.get(i));
             data.add(current);
         }
         return data;
